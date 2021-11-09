@@ -6,19 +6,33 @@ It is provided under the terms of Apache 2.0 License
 
 ## How to use
 
-- fetch the MV-RLU from github and build
+- Fetch the MV-RLU from github and build
 ```
 #> git clone https://github.com/cosmoss-vt/mv-rlu.git
 #> cd mv-rlu
 #/mv-rlu> make ordo
 #/mv-rlu> make
 ```
-- Clone this repository in the '/benchmark'
+- Clone this repository and check the files for the ART: 'art.h' 'art.c'
 ```
-#/mv-rlu> cd benchmark
-#/mv-rlu/benchmark> git clone <this repo> 
+#> git clone <this repo> 
 ```
-- Build and run
+- Put the files in your application, and including it before using it with MV-RLU
+- Don't forget to define ``IS_MVRLU`` or ```rlu.h``` will be used.
 ```
-#/mv-rlu/benchmark> make
+#define IS_MVRLU
+#include "art.h"
+```
+- You can handle ART structure through following APIs
+```
+art_tree_init()
+art_tree_destroy()
+art_size()
+art_insert()
+art_delete()
+art_search()
+art_minimum()
+art_maximum()
+art_iter()
+art_iter_prefix()
 ```
